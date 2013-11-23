@@ -16,31 +16,9 @@
 </p>
 
 <h2>Responses</h2>
-<% @question.responses.each do |response| %>
-  <p>
-    <strong>Text:</strong>
-    <%= response.text %>
-  </p>
- 
-  <p>
-    <strong>Weight:</strong>
-    <%= response.weight %>
-  </p>
-<% end %>
+<%= render @question.responses %>
 
 <h2>Add a response:</h2>
-<%= form_for([@question, @question.responses.build]) do |f| %>
-  <p>
-    <%= f.label :text %><br />
-    <%= f.text_field :text %>
-  </p>
-  <p>
-    <%= f.label :weight %><br />
-    <%= f.text_field :weight %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render "responses/form" %>
 
 <%= link_to 'Back', questions_path %> | <%= link_to 'Edit', edit_question_path(@question) %>
