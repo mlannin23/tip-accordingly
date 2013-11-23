@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131112001814) do
+ActiveRecord::Schema.define(version: 20131113102730) do
 
   create_table "questions", force: true do |t|
     t.text     "text"
@@ -20,5 +20,15 @@ ActiveRecord::Schema.define(version: 20131112001814) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "responses", force: true do |t|
+    t.text     "text"
+    t.float    "weight"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "responses", ["question_id"], name: "index_responses_on_question_id"
 
 end
