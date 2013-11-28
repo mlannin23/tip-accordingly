@@ -1,18 +1,15 @@
 <h1>Tip Accordingly</h1>
-
-<form name="calculator" action="" method="get">
   
-  <% @questions.each do |question| %>
-    <div>
-      <h3><%= question.text %></h3>
-      <% question.responses.each do |response| %>
-        <p>
-          <input type="<%= question.format %>" name="response" value="<%= response.weight %>">
-          <label for="response"><%= response.text %></label>
-        </p>
-      <% end %>
-    </div>
-  <% end %>
+<% @questions.each do |question| %>
+  <form name="question" action="" method="get">
+    <h3><%= question.text %></h3>
+    <% question.responses.each do |response| %>
+      <p>
+        <input type="<%= question.format %>" name="response" value="<%= response.weight %>">
+        <label for="response"><%= response.text %></label>
+      </p>
+    <% end %>
+  </form>
+<% end %>
 
-  <input type="button" name="button" value="Calculate Tip">
-</form>
+<button id="calculate">Calculate Tip</button>
