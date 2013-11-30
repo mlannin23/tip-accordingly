@@ -14,6 +14,7 @@ YUI().use('node', 'event', function (Y) {
   var calculateButtonEvent = function () {
     var questionsNode = Y.one('#questions'),
         questions = questionsNode.all('#question'),
+        percentageNode = Y.one('#percentage'),
         percentage = 0.10,
         blankQuestion = false,
         toDisplay;
@@ -25,7 +26,7 @@ YUI().use('node', 'event', function (Y) {
           i;
 
       if (responseWeights.length == 0 && questionWeight != 1.0) {
-        toDisplay = 'A question was not answered';
+        toDisplay = 'A required question was left blank';
         blankQuestion = true;
       } else {
         for (i = 0; i < length; i++) {
@@ -37,6 +38,8 @@ YUI().use('node', 'event', function (Y) {
     if (!blankQuestion) {
       toDisplay = percentage;
     }
+
+    percentageNode.setHTML('<h3>' + toDisplay + '</h3>');
   }
 
   calculateButtonListener();
