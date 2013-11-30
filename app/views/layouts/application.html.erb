@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Tip Accordingly</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "http://yui.yahooapis.com/3.14.0/build/yui/yui-min.js" %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This app asks you a series of questions about your restaurant experience and then suggests a tip percentage based on your responses.">
+    <meta name="author" content="Michael Lannin">
+    <%= csrf_meta_tags %>
 
-<%= yield %>
+    <title>Tip Accordingly</title>
+    
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  </head>
+  <body>
 
-</body>
+    <%= yield %>
+
+    <%= javascript_include_tag "http://yui.yahooapis.com/3.14.0/build/yui/yui-min.js" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  </body>
 </html>
