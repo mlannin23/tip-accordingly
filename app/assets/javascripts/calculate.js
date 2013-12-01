@@ -17,6 +17,7 @@ YUI().use('node', 'event', function (Y) {
         percentageNode = Y.one('#percentage'),
         percentage = 0.10,
         blankQuestion = false,
+        alertNode = Y.one('#alert'),
         percentageMarkup;
 
     questions.each(function (question) {
@@ -34,7 +35,10 @@ YUI().use('node', 'event', function (Y) {
       }
     })
 
-    if (!blankQuestion) {
+    if (blankQuestion) {
+      alertNode.setStyle('display', 'inherit');
+    } else {
+      alertNode.setStyle('display', 'none');
       percentageMarkup = (Math.round(percentage * 10000)) / 100 + '%';
       percentageNode.setHTML(percentageMarkup);
     }
