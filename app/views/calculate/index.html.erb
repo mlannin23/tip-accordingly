@@ -6,6 +6,7 @@
   </div>
 </header>
 
+<!-- Body -->
 <div class="container">
   <div class="row">
     <!-- Questions Section -->
@@ -16,8 +17,8 @@
           <% @questions.each do |question| %>
             <form name="question" id="question" action="" method="get">
               <!-- Question -->
-              <h3><%= question.text %></h3>
-              <span id="question-weight" class="question-weight"><%= question.weight %></span>
+              <p class="question-text"><%= question.text %></p>
+              <p id="question-weight" class="question-weight"><%= question.weight %></p>
               <!-- Responses -->
               <% question.responses.each do |response| %>
                 <div class="<%= question.format %>">
