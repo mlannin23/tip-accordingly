@@ -31,13 +31,12 @@
 
 /* Questions Section */
 .questions-section {
+  .question-weight {
+    display: none;
+  }
   .calculate {
     text-align: center;
     margin-top: 30px;
-  }
-  label {
-    display: inline;
-    padding-left: 3px;
   }
 }
 
@@ -49,9 +48,9 @@
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 10px 20px;
-  background-color: #EAF7FE;
+  background-color: #eaf7fe;
   border-radius: 5px;
-  min-height: 124px;
+  min-height: 300px;
   .text {
     font-size: 16px;
   }
@@ -84,5 +83,23 @@
   .percentage-section.affix,
   .percentage-section.affix-bottom {
     width: 360px;
+  }
+}
+
+/* Footer */
+.footer {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  margin-top: 20px;
+  color: #777777;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+}
+@media (min-width: 768px) {
+  .footer {
+    text-align: left;
+  }
+  .footer p {
+    margin-bottom: 0;
   }
 }
