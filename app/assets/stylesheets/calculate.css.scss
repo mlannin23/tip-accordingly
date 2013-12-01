@@ -1,3 +1,88 @@
 // Place all the styles related to the calculate controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Header */
+.header {
+  background-color: #074e68;
+  color: #ffffff;
+  padding: 30px 0 30px;
+  font-size: 16px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0,0,0,.15);
+  .container {
+    position: relative;
+    p {
+      font-weight: 300;
+      line-height: 1.5;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .header {
+    font-size: 21px;
+    text-align: left;
+    h1 {
+      font-size: 60px;
+      line-height: 1;
+    }
+  }
+}
+
+/* Questions Section */
+.questions-section {
+  .calculate {
+    text-align: center;
+    margin-top: 30px;
+  }
+  label {
+    display: inline;
+    padding-left: 3px;
+  }
+}
+
+/* Percentage Section */
+.percentage-section.affix {
+  position: static;
+}
+.percentage-box {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  background-color: #EAF7FE;
+  border-radius: 5px;
+  min-height: 124px;
+  .text {
+    font-size: 16px;
+  }
+  .percentage {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .percentage-section.affix,
+  .percentage-section.affix-bottom {
+    width: 293px;
+    .percentage-box {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .percentage-section.affix {
+    position: fixed;
+    top: 30px;
+  }
+  .percentage-section.affix-bottom {
+    position: absolute;
+  }
+}
+@media (min-width: 1200px) {
+  .percentage-section.affix,
+  .percentage-section.affix-bottom {
+    width: 360px;
+  }
+}

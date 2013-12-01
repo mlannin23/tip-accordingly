@@ -1,23 +1,47 @@
-<h1>Tip Accordingly</h1>
+<header class="header">
+  <div class="container">
+    <h1>Tip Accordingly</h1>
+    <p>This app asks you a series of questions about your restaurant experience and then suggests a tip percentage based on your responses.</p>
+  </div>
+</header>
 
-<!-- Questions -->
-<div id="questions"> 
-  <% @questions.each do |question| %>
-    <form name="question" id="question" action="" method="get">
-      <!-- Question -->
-      <h3><%= question.text %></h3>
-      <span id="question-weight" style="display:none"><%= question.weight %></span>
-      <!-- Responses -->
-      <% question.responses.each do |response| %>
-        <p>
-          <input type="<%= question.format %>" name="response" id="response" value="<%= response.weight %>">
-          <label for="response"><%= response.text %></label>
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-8">
+      <div id="questions-section" class="questions-section">
+        <!-- Questions -->
+        <div id="questions"> 
+          <% @questions.each do |question| %>
+            <form name="question" id="question" action="" method="get">
+              <!-- Question -->
+              <h3><%= question.text %></h3>
+              <span id="question-weight" style="display:none"><%= question.weight %></span>
+              <!-- Responses -->
+              <% question.responses.each do |response| %>
+                <p>
+                  <input type="<%= question.format %>" name="response" id="response" value="<%= response.weight %>">
+                  <label for="response"><%= response.text %></label>
+                </p>
+              <% end %>
+            </form>
+          <% end %>
+        </div>
+        <!-- Calculate Button -->
+        <p class="calculate">
+          <button type="button" id="calculate" class="btn btn-default btn-lg">Calculate Tip</button>
         </p>
-      <% end %>
-    </form>
-  <% end %>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div id="percentage-section" class="percentage-section" data-spy="affix" data-offset-top="222">
+        <div class="percentage-box">
+          <div class="text">Your suggested percentage:</div>
+          <div id="percentage" class="percentage"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
-
-<button id="calculate">Calculate Tip</button>
-
-<div id="percentage"></div>

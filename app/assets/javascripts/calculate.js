@@ -17,7 +17,7 @@ YUI().use('node', 'event', function (Y) {
         percentageNode = Y.one('#percentage'),
         percentage = 0.10,
         blankQuestion = false,
-        toDisplay;
+        percentageMarkup;
 
     questions.each(function (question) {
       var questionWeight = question.one('#question-weight').get('innerHTML'),
@@ -26,7 +26,6 @@ YUI().use('node', 'event', function (Y) {
           i;
 
       if (responseWeights.length == 0 && questionWeight != 1.0) {
-        toDisplay = 'A required question was left blank';
         blankQuestion = true;
       } else {
         for (i = 0; i < length; i++) {
@@ -36,10 +35,9 @@ YUI().use('node', 'event', function (Y) {
     })
 
     if (!blankQuestion) {
-      toDisplay = percentage;
+      percentageMarkup = (Math.round(percentage * 10000)) / 100 + '%';
+      percentageNode.setHTML(percentageMarkup);
     }
-
-    percentageNode.setHTML('<h3>' + toDisplay + '</h3>');
   }
 
   calculateButtonListener();
