@@ -48,4 +48,4 @@ end
 gem 'rails_12factor', group: :production
 
 # Specify Ruby version
-ruby "1.9.3p392"
+ruby "1.9.3"
