@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131113102730) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "questions", force: true do |t|
     t.text     "text"
     t.float    "weight"
@@ -29,6 +32,6 @@ ActiveRecord::Schema.define(version: 20131113102730) do
     t.datetime "updated_at"
   end
 
-  add_index "responses", ["question_id"], name: "index_responses_on_question_id"
+  add_index "responses", ["question_id"], name: "index_responses_on_question_id", using: :btree
 
 end
