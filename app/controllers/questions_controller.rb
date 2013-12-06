@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
   
+  http_basic_authenticate_with name: ENV['NAME'], password: ENV['PASSWORD']
+
   def index
     @questions = Question.all
   end
