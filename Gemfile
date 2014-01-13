@@ -44,6 +44,14 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Use Twitter Bootstrap
+gem 'bootstrap-sass'
+group :development do
+  gem 'rails_layout'
+end
+
+# Gem required for Heroku
 gem 'rails_12factor', group: :production
 
+#Specify Ruby version
 ruby "1.9.3"
